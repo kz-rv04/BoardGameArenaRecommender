@@ -1,0 +1,2 @@
+# BoardGameArenaRoulette
+ボードゲームアリーナのゲームをランダムにお勧めしてくれるプログラム
