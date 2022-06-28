@@ -39,9 +39,10 @@ def pickup_games(name:str, players:int, best_players:int, mechanism:str, premium
 
     """
     df = pd.read_csv(GAME_DATA, sep="\t")
+    df = filter_games(df, name, players, best_players, mechanism, premium)
     return df.sample(n=n)
 
-def filer_games(df, name:str, players:int, best_players:int, mechanism:str, premium:int):
+def filter_games(df, name:str, players:int, best_players:int, mechanism:str, premium:int):
     if name:
         df = df.dropna()
         df = df[df['name'].str.contains(name)]
@@ -56,21 +57,18 @@ def filer_games(df, name:str, players:int, best_players:int, mechanism:str, prem
         df = df[df['premium'] == int(premium)]
     
     return df
-    
 
-if __name__=="__main__":
+# if __name__=="__main__":
 
-    pd.set_option('display.max_rows', 200)
-    # print(len(get_tag_list()))
-    # print(len(get_artist_list()))
+#     pd.set_option('display.max_rows', 200)
+#     # print(len(get_tag_list()))
+#     # print(len(get_artist_list()))
 
-    params = {
-        'name':'',
-        'players':'',
-        'best_players':'4',
-        'mechanism':'',
-        'premium':'1',
-    }
-    # print(pickup_games(**params))
-    df = pd.read_csv(GAME_DATA, sep="\t")
-    print(filer_games(df, **params))
+#     params = {
+#         'name':'',
+#         'players':'',
+#         'best_players':'4',
+#         'mechanism':'',
+#         'premium':'1',
+#     }
+#     print([pickup_games(**params).values])
