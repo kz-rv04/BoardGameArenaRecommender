@@ -1,6 +1,6 @@
 import pandas as pd
 
-GAME_DATA = "../data/game_list.tsv"
+GAME_DATA = "./data/game_list.tsv"
 
 def get_column_set(column):
     """指定したcolumnの要素の集合を取得する

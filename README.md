@@ -1,2 +1,2 @@
-# BoardGameArenaRoulette
-ボードゲームアリーナのゲームをランダムにお勧めしてくれるプログラム
+# BoardGameArenaRecommender
+ボードゲームアリーナのゲームをランダムにお勧めしてくれるDiscordbot

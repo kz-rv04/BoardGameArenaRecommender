@@ -5,7 +5,7 @@ import json
 
 client = discord.Client()
 
-with open("../env.json", mode="r") as f:
+with open("./env.json", mode="r") as f:
     dic = json.loads(f.read())
 TOKEN = dic["DISCORD_BOT_TOKEN"]
 
