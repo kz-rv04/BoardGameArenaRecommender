@@ -2,12 +2,16 @@ import discord
 import recommender
 
 import json
+import os
 
 client = discord.Client()
 
-with open("./env.json", mode="r") as f:
-    dic = json.loads(f.read())
-TOKEN = dic["DISCORD_BOT_TOKEN"]
+if os.getenv("DISCORD_BOT_TOKEN"):
+    TOKEN = os.getenv("DISCORD_BOT_TOKEN")
+else:
+    with open("./env.json", mode="r") as f:
+        dic = json.loads(f.read())
+    TOKEN = dic["DISCORD_BOT_TOKEN"]
 
 
 @client.event
