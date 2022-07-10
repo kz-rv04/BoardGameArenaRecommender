@@ -40,6 +40,10 @@ def pickup_games(name:str, players:int, best_players:int, mechanism:str, premium
     """
     df = pd.read_csv(GAME_DATA, sep="\t")
     df = filter_games(df, name, players, best_players, mechanism, premium)
+
+    if df.empty:
+        return df
+
     return df.sample(n=n)
 
 def filter_games(df, name:str, players:int, best_players:int, mechanism:str, premium:int):
